@@ -9,7 +9,7 @@ import tensorflow as tf
 app = FastAPI()
 
 origins = [
-    "http://localhost", 
+    "https://api-new-nine.vercel.app/"
 
 
     
