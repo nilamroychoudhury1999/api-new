@@ -8,19 +8,7 @@ import tensorflow as tf
 
 app = FastAPI()
 
-origins = [
-    "https://api-new-nine.vercel.app/"
 
-
-    
-]
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 MODEL = tf.keras.models.load_model("./models/1")
 
@@ -50,5 +38,3 @@ async def predict(
         'confidence': float(confidence)
     }
 
-if __name__ == "__main__":
-    uvicorn.run(app, host='api-new-nine.vercel.app', port=80)
